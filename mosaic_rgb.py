@@ -43,6 +43,7 @@ if n == 2:
         os.makedirs('output')
 
     save_img = mosaic_rgb(sys.argv[1])
-    cv.imwrite('output\\mosaic_rgb_' + sys.argv[1], save_img)
+    output_path = os.path.join('output', 'mosaic_rgb_' + os.path.basename(sys.argv[1]))
+    cv.imwrite(output_path, save_img)
 else:
     print('Please provide a picture!!!')

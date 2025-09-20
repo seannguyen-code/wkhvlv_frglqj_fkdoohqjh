@@ -45,6 +45,7 @@ if n == 2:
         os.makedirs('output')
 
     save_img = bit_splicing(sys.argv[1])
-    cv.imwrite('output\\bit_splicing' + sys.argv[1], save_img)
+    output_path = os.path.join('output', 'bit_splicing_' + os.path.basename(sys.argv[1]))
+    cv.imwrite(output_path, save_img)
 else:
     print('Please provide a picture!!!')
